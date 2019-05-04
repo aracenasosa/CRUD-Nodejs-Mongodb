@@ -1,0 +1,38 @@
+<% include partials/header %>
+
+<div class="container">
+    <div class="row">
+        <!--Form-->
+        <div class="col-md-5 offset-md-3">
+            <div class="card">
+                <div class="card-header bg-dark">
+                    <span class="text-light m-auto" style="font-size: 40px">Edit <i class="fas fa-user-edit"></i></span>
+                </div>
+                <div class="card-body">
+                    <form action="/edit/<%= task._id %>"" method="POST">
+                        <div class="form-group">
+                            <input type="text" name="title" class="form-control" placeholder="Insert a Title"
+                                value="<%= task.title %>">
+                        </div>
+                        <div class="form-group">
+                            <textarea name="description" class="form-control" placeholder="Insert a Description"
+                                cols="30" rows="10"><%= task.description %>
+                                 </textarea>
+                        </div>
+                        <div class="form-group">
+                            <select name="type" class="form-control">
+                                <option value="<%= task.title %>"><%= task.type %></option>
+                                <option value="Job">Job</option>
+                                <option value="Work">Work</option>
+                                <option value="Homework">Homework</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-block">Update</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<% include partials/footer %>
